@@ -19,7 +19,6 @@ func main() {
 	c = 10*/
 
 	fmt.Println("x: ", x, "\ty: ", y, "\tz: ", z)
-	fmt.Println("Checking the update in Git")
 	fmt.Printf("\n%T\t%T\t%T", x, y, z)
 
 }
