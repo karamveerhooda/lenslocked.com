@@ -1,24 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
+func handlerfunc(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Fprint(w, "<h1>Hello world</h1>")
+}
 func main() {
-
-	var x int
-	var y string
-	var z bool
-	//var a int16
-	//var b int32
-	//var c int64
-
-	x = 42
-	y = "James Bond"
-	z = true
-	/*a = 10
-	b = 10
-	c = 10*/
-
-	fmt.Println("x: ", x, "\ty: ", y, "\tz: ", z)
-	fmt.Printf("\n%T\t%T\t%T", x, y, z)
-
+	http.HandleFunc("/", handlerfunc)
+	http.ListenAndServe(":3000", nil)
 }
